@@ -1,0 +1,9 @@
+C:\Users\robot\source\repos\Graph\Graph\bin\Debug\Graph.exe.config
+C:\Users\robot\source\repos\Graph\Graph\bin\Debug\Graph.exe
+C:\Users\robot\source\repos\Graph\Graph\bin\Debug\Graph.pdb
+C:\Users\robot\source\repos\Graph\Graph\obj\Debug\Graph.csprojAssemblyReference.cache
+C:\Users\robot\source\repos\Graph\Graph\obj\Debug\Graph.Form1.resources
+C:\Users\robot\source\repos\Graph\Graph\obj\Debug\Graph.Properties.Resources.resources
+C:\Users\robot\source\repos\Graph\Graph\obj\Debug\Graph.csproj.GenerateResource.cache
+C:\Users\robot\source\repos\Graph\Graph\obj\Debug\Graph.exe
+C:\Users\robot\source\repos\Graph\Graph\obj\Debug\Graph.pdb
