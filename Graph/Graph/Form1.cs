@@ -92,16 +92,16 @@ namespace Graph
         } 
         private void btn_pressed(Button btn)
         {
-            if(start != null)
+            if(start == null)
             {
                 start = btn;
                 start.BackColor = Color.GreenYellow;
                 return;
             }
-            if (end != null)
+            if (end == null)
             {
                 end = btn;
-                end.BackColor = Color.AntiqueWhite;
+                end.BackColor = Color.Red;
             }
             if(start != null && end != null)
             {
@@ -184,6 +184,54 @@ namespace Graph
         private void vertex11_Click(object sender, EventArgs e)
         {
             btn_pressed(vertex11);
+        }
+        private Vertex get_vertex(Button btn)
+        {
+            for(int i = 0; i < graph.Vertices.Count; i++)
+            {
+                if (graph.Vertices[i].Btn.Equals(btn))
+                {
+                    return graph.Vertices[i];
+                }
+            }
+            return null;
+        }
+        private void show_short_path(List<Vertex> short_path)
+        {
+            for(int i = 1; i < short_path.Count - 1; i++)
+            {
+                short_path[i].Btn.BackColor = Color.Bisque;
+            }
+        }
+        private void set_default_color()
+        {
+            for (int i = 0; i <graph.Vertices.Count - 1; i++)
+            {
+                graph.Vertices[i].Btn.BackColor = Color.BlueViolet;
+            }
+        }
+        private void btn_again_actions()
+        {
+            start = null;
+            end = null;
+            set_default_color();
+            btnAgain.Enabled = false;
+        }
+
+        private void btnAgain_Click(object sender, EventArgs e)
+        {
+            btn_again_actions();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Vertex start_vertex = get_vertex(start);
+            Vertex end_vertex = get_vertex(end);
+            List<Vertex> short_path = Dijkstra.dijkstra_algo(graph, start_vertex, end_vertex);
+
+            show_short_path(short_path);
+            btnSearch.Enabled = false;
+            btnAgain.Enabled = true;
         }
     }
 }

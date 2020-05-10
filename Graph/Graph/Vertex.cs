@@ -11,6 +11,7 @@ namespace Graph
     {
         private States state;
         private Button btn;
+
         public States State
         {
             get
@@ -35,6 +36,16 @@ namespace Graph
         {
             btn = _btn;
             state = _state;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var vertex = obj as Vertex;
+            return vertex != null &&
+                    EqualityComparer<Button>.Default.Equals(btn, vertex.btn) &&
+                    state == vertex.state &&
+                    EqualityComparer<Button>.Default.Equals(Btn, vertex.Btn) &&
+                            State == vertex.State;
         }
     }
 }
